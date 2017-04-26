@@ -4,7 +4,7 @@ module "vpn" {
 	count					= "1"
 	instance_type			= "t2.nano"
 	ebs_optimized			= false
-	vpc_security_group_ids	= "${ aws_security_group.openvpn.id }"
+	vpc_security_group_ids	= [ "${ aws_security_group.openvpn.id }" ]
 	subnet_id				= "${ var.subnet_id }"
 	user_data				= "${ data.ignition_config.vpn.rendered }"
 	iam_instance_profile	= "${ var.iam_profile }"
