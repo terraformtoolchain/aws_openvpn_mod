@@ -9,6 +9,7 @@ module "vpn" {
 	user_data				= "${ data.ignition_config.vpn.rendered }"
 	iam_instance_profile	= "${ var.iam_profile }"
 	dept_name				= "${ var.dept_name }"
+	instance_name			= "openvpn"
 }
 
 resource "aws_security_group" "openvpn" {
