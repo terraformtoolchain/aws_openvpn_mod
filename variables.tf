@@ -30,9 +30,3 @@ variable "zone_id" {
 	type		= "string"
 	description = "(Required) The Route53 Zone ID to for the VPN instance. Should be a public dns zone."
 }
-
-variable "efs_registry" {
-	type		= "string"
-	description = "(Required) The domain name of the efs registry containing the Openvpn ACI."
-}
-
