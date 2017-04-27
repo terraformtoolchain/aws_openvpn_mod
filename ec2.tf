@@ -2,7 +2,6 @@ module "vpn" {
 	source = "git::https://github.com/terraformtoolchain/aws_container_linux_mod.git?ref=v0.3.0"
 
 	count					= "1"
-	ssh_key					= "bastion"
 	instance_type			= "t2.nano"
 	public_instance			= true
 	ebs_optimized			= false
