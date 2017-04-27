@@ -1,3 +1,8 @@
+variable "vpc_id" {
+	type		= "string"
+	description = "(Required) The VPC ID the openvpn instance is running in"
+}
+
 variable "subnet_id" {
 	type		= "string"
 	description = "(Required) The destination subnet of the openvpn instance."
