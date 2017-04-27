@@ -30,3 +30,8 @@ variable "zone_id" {
 	type		= "string"
 	description = "(Required) The Route53 Zone ID to for the VPN instance. Should be a public dns zone."
 }
+
+variable "base_fqdn" {
+	type		= "string"
+	description = "(Required) The name of the dns zone that the instance will be accessible from. Ex. vpn.example.com."
+}	
