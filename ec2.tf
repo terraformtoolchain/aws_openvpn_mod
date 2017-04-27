@@ -1,10 +1,12 @@
 module "vpn" {
-	source = "git::https://github.com/terraformtoolchain/aws_container_linux_mod.git?ref=v0.2.0"
+	source = "git::https://github.com/terraformtoolchain/aws_container_linux_mod.git?ref=v0.3.0"
 
 	count					= "1"
+	ssh_key					= "bastion"
 	instance_type			= "t2.nano"
+	public_instance			= true
 	ebs_optimized			= false
-	vpc_security_group_ids	= [ "${ aws_security_group.openvpn.id }" ]
+	security_group_ids		= "${ aws_security_group.openvpn.id }"
 	subnet_id				= "${ var.subnet_id }"
 	user_data				= "${ data.ignition_config.vpn.rendered }"
 	iam_instance_profile	= "${ var.iam_profile }"
